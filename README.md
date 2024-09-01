@@ -41,4 +41,43 @@ Compilers :
     * Reference is not an object or a pointer, its a trick of a syntax which is dangerous to use and also debug.
     * Its advisable to use a **const** for the reference, so that the value cannot be changed further.
   
- 
+ * **Conditionals:**
+    * A conditional statement allows you to run one block of code or another based on a condition.
+    * if (condition) {
+          statement-block;
+      }
+      This is an example of conditional statement in C++, if the condition is true, then the statement is executed.
+      If the condition is false, the flow continues without executing the statement-block.
+    * An **if** statement may also have **else**, in which if the **if** condition is false, then the **else** condition based statement-block is executed.
+    * Turnary conditional operator :
+       * auto s = x > y ? "yes" : "no";
+       * What it does here is it evalutes the condition, and the ? seperates the condition from the results.
+       * if the condition is true, it returns the value and if the condition is false, it returns the second value.
+     
+ * **Loops :**
+    * **While**
+       * The basic while loop looks like a simple if statement. In this case the statement-block will execute repeatedly until the condition is false.
+       * while (condition) {
+             statement-block;
+         }
+      * To break the loop in between, you can use **break** keyword at a specific condition inside the loop.
+      * To skip one loop execution, you can use **continue** keyword at a specific condition inside the loop, and continue execution for the rest.
+   * **do-whille**
+      * The only difference is, in the beginning you have do and the end of the loop, you have while
+      * do {
+             statement-block;
+         } while (condition);
+      * But the major difference is, in while the condition is checked first then statements are exeucted, so the chances are that if the condition is false, the statements are never executed (zero times)
+      * Where as in do-while, the statements are executed atleast once, thereafter condition is checked.
+      * While loop is entry controlled loop, do-while is exit controlled loop.
+    * **For**
+       * There are two types, one inherited from C and other is from C++.
+       * for (int i {0}; i < 5; ++i) { // for (Initializer, condition, increment)
+            statement-block;
+         }
+       * Another type is range based for loop, which has been added since C++ 11.
+       * for (int i : {0,1,2,3,4,5,}) { // for (range declaration : range expression)
+            cout << i << ' ';
+         }
+       * range declaration is a variable whose type is the same of the element of the sequence represented by range expression. Often uses the auto specifier for automatic type.
+
