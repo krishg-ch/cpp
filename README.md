@@ -81,3 +81,56 @@ Compilers :
          }
        * range declaration is a variable whose type is the same of the element of the sequence represented by range expression. Often uses the auto specifier for automatic type.
 
+**Datatypes**
+* **Primitive types:**
+   * integer types --> represents interger numerical values
+   * floating-point types --> represents real numerical values
+   * Boolean types --> true and false values
+* **Compound types:** (serves as container for primitive and other types)
+   * Array --> sequential set of objects of same data types. Also arrays are the basis for C-strings.
+   * Structure and classes --> 
+       * Structures are sequential set of objects of different data types. Can contain scalar, arrays and even other structures and classes.
+       * Classes are based on C-structures. Technically its a class that defaults to private membership. So a class is a structure that contains function members as well as data memebers.
+   * Unions --> its a container of overlapping objects. Allows a container to hold objects of different types at the same time reusing the same space.
+   * Enum --> its an enumeration type, holds a specific set of values enumerated with names.
+   * Void --> represents absence of value.
+   * Pointer --> holds an address that refers to an object of a given type. The type of pointer used is same as the type of referenced value.
+   * Reference --> Its like a pointer, but once referred we cannot change the reference to a different object.
+   * Auto --> Automatically determines the datatype.
+
+**Integer types** (all of them are available in both signed and unsigned versions):
+* **char**
+  * can be signed or unsigned depending on the system.
+  * requires 8 bits of spac. ranges from -128 to 127 or 0 to 255
+* **Integer types** are always signed, unless modified with unsigned. The size of each type varies depending on both architecture and the compiler. If you require an integer of a specific size, <cstdint> header provied different types and widths of 8,16,32 and 64 bits in both signed and unsigned.
+  * short int --> requires 16 bits. ranges from -32,768 to 32,767 pr 0 to 65535
+  * int --> requires 32 bits. ranges from -2,147,483,648 to 2,147,483,647 or 0 to 4,294,967,295
+  * long int --> requires 32 or 64 bits.
+  * long long int --> requires 32 or 64 bits.
+
+**Floating types:**
+* float --> 32 bits, precision upto 7 digits.
+* double --> 64 bits, precision upto 15 digits.
+* long double --> same as double for apple clang, for microsoft clang it`ll read out as 128 bits but its actually an 80 bit IEEE long double . 
+  * comparision of these floating types will never be equal, as they have a rounding error (eg : if float_var == 0.3,  is always false, the value may be the same but not due to the rounding error)
+  * so the floating types are used for if scale is important but not the precision. If we need precision, use only integers.
+
+**Auto type:**
+* Introduced from C++ 11.
+* Auto variables derives their own type, they cannot be left unintialized.
+* They are commonly intialized with **=** rather than **{}**.
+
+**Qualifiers:**
+ * **CV Qualifiers** (CV - Const and Volatile)
+  * const --> value cannot be changed once defined.
+  * mutable --> used on data members to make them writable from a const qualified member function.
+  * volatile --> varaible that can be changed by another process, but rarely used and deprecated in C++ 20.
+ * **Storage Duation** (used to define duration or lifetime of a variable)
+  * static --> variables have life beyond the exeuction of the block, they live for the duration of the program and also can be accessed in any function. By default variables defined outside any block is static.
+  * register --> variables are stored in the processor, makes them faster and easier to access and operate on.
+  * extern --> defined in seperate translation unit and are linked with your code during the linker step of the compiler process.
+
+**Type aliases:**
+ * Used when type declaration vary on different target systems.
+ * Can be defined using **typedef**. Eg : typedef uint32_t var_name;
+ * Modern way to do typedefs is using **alias**. Eg : using var_name = uint32_t; (both does the same job, working with alias is flexible)
