@@ -134,3 +134,24 @@ Compilers :
  * Used when type declaration vary on different target systems.
  * Can be defined using **typedef**. Eg : typedef uint32_t var_name;
  * Modern way to do typedefs is using **alias**. Eg : using var_name = uint32_t; (both does the same job, working with alias is flexible)
+
+**Operators:**
+ * **Common operators**
+  * Assignment operator (Copy operator) --> copy a value from one object to another (eg: x = y;)
+  * Arithmetic operators --> Addition (+),Subtraction (-), Multiplication (*), Division (/), Modulus (%) which gives the remainder
+  * Relational operators (Comparison operators) -->  Equality (x == y;), not equal to (x != y;), greater (>, >=) less (<, <=)
+  * Logical operators --> For boolean values. AND (&&), OR (||), NOT (!)
+    * AND and OR operators perform short circuiting evaluation and that means if the condition is satisfied after evaluating one side of the operator, the other operand is not evaluated.
+  * XOR operator would evaluate true if one and only one of the two operands was true.
+    * Simple implementation (a!=b).
+    * If operands are not boolean (!a != !b)
+ * **Compund assigment operators**
+  * +=, -=, *=, /=, %= (eg: x += y is same as x = x+y)
+ * **Unary operators**
+  * For incrementing and decrementing values --> ++, --
+  * ++x --> retruns the value of x after incrementing (pre-fix operation)
+  * x++ --> retruns the value of x before incrementing (post-fix operation)
+ * **Operator precedence**
+  * [Cpp operator precedence](https://en.cppreference.com/w/cpp/language/operator_precedence)
+  * Its good to use paranthesis, to evaluate the order.
+    
